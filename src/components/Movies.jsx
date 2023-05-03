@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const Movies = () => {
-  return <div>хуй</div>;
+  return <div>Bobaba</div>;
 };
