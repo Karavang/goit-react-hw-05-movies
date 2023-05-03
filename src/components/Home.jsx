@@ -1,31 +1,29 @@
-import { fetchSearch } from 'api';
-import React, { useState } from 'react';
+import { forHomePage } from 'api';
+import React, { useEffect, useState } from 'react';
 
 export const Home = () => {
-  const [aob, setAob] = useState([]);
+  const [titles, setTitles] = useState([]);
 
-  let allResults = [];
+  useEffect(() => {
+    async function getTitles() {
+      const res = await forHomePage();
+      const titles = res.results.map(e => e.original_title);
+      setTitles(titles);
+    }
 
-  for (let page = 1; page <= 25; page++) {
-    fetchSearch('movie', page).then(res => {
-      if (res.original_title) {
-        allResults.push(res.original_title);
-      }
-    });
-  }
-  setAob(allResults);
-  console.log(allResults);
-
-  console.log(aob);
+    getTitles();
+  }, []);
 
   return (
     <ul className="list-titles">
-      {aob.map(e => {
-        <li>
-          <a href="#" className="li-of-titles">
-            {e}
-          </a>
-        </li>;
+      {titles.map(e => {
+        return (
+          <li>
+            <a href="#" className="li-of-titles">
+              {e}
+            </a>
+          </li>
+        );
       })}
     </ul>
   );
