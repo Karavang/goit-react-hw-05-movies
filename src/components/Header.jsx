@@ -7,12 +7,12 @@ export const Header = () => {
       <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
         <ul className="navbar-nav list-header">
           <li className="nav-item">
-            <NavLink className="nav-link" to="/goit-react-hw-05-movies/">
+            <NavLink className="nav-link" to="/">
               Home
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/goit-react-hw-05-movies/movies">
+            <NavLink className="nav-link" to="/movies">
               Movies
             </NavLink>
           </li>
