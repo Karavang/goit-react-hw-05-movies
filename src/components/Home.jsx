@@ -19,7 +19,7 @@ export const Home = () => {
       {titles.map(e => {
         return (
           <li>
-            <a href="#" className="li-of-titles">
+            <a href="/" className="li-of-titles">
               {e}
             </a>
           </li>
