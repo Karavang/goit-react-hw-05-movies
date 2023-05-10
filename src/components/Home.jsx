@@ -1,5 +1,6 @@
 import { forHomePage } from 'api';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
   const [titles, setTitles] = useState([]);
@@ -7,7 +8,7 @@ export const Home = () => {
   useEffect(() => {
     async function getTitles() {
       const res = await forHomePage();
-      const titles = res.results.map(e => e.original_title);
+      const titles = res.results;
       setTitles(titles);
     }
 
@@ -18,10 +19,10 @@ export const Home = () => {
     <ul className="list-titles">
       {titles.map(e => {
         return (
-          <li>
-            <a href="/" className="li-of-titles">
-              {e}
-            </a>
+          <li key={e.id}>
+            <Link href="/" className="li-of-titles">
+              {e.original_title}
+            </Link>
           </li>
         );
       })}

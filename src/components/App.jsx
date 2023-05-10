@@ -6,10 +6,11 @@ import { Movies } from './Movies';
 export const App = () => {
   return (
     <>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
+        <Route path="/" element={<Header />}>
+          <Route index element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+        </Route>
       </Routes>
     </>
   );
