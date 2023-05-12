@@ -19,11 +19,9 @@ export const Home = () => {
     <ul className="list-titles">
       {titles.map(e => {
         return (
-          <li key={e.id}>
-            <Link href="/" className="li-of-titles">
-              {e.original_title}
-            </Link>
-          </li>
+          <Link to=":id" className="li-of-titles">
+            <li key={e.id}>{e.original_title}</li>
+          </Link>
         );
       })}
     </ul>
