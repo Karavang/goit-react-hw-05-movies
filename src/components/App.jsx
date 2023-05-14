@@ -5,14 +5,15 @@ import { Movies } from './Movies';
 import { MovieDetails } from './MovieDetails';
 import { NotFound } from './NotFound';
 
-export const App = () => {
+export const App = e => {
   return (
     <>
       <Routes>
         <Route path="/" element={<Header />}>
           <Route index element={<Home />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/movies/:id" element={<MovieDetails />} />
+          <Route path="/movies" element={<Movies />}>
+            <Route path={`:${e.id}`} element={<MovieDetails />} />
+          </Route>
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
