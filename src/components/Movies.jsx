@@ -29,7 +29,7 @@ export const Movies = () => {
       <ul className="list-titles">
         {title && title.results ? (
           title.results.map(e => (
-            <Link to={e.id} className="li-of-titles">
+            <Link to={`/movies/${e.id}`} className="li-of-titles">
               <li key={e.id}>{e.original_title}</li>
             </Link>
           ))
