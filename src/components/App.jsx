@@ -12,7 +12,7 @@ export const App = e => {
         <Route path="/" element={<Header />}>
           <Route index element={<Home />} />
           <Route path="/movies" element={<Movies />}>
-            <Route path={`:${e.id}`} element={<MovieDetails />} />
+            <Route path={`${e.id}`} element={<MovieDetails />} />
           </Route>
         </Route>
         <Route path="*" element={<NotFound />} />
