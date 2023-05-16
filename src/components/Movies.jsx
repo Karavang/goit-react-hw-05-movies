@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
 import { forSearchPage } from 'api';
 import { Link } from 'react-router-dom';
+import { createContext } from 'react';
 
-export const Movies = () => {
-  const [title, setTitle] = useState();
-
+export const Movies = ({ title, setTitle }) => {
   const handleSearch = async e => {
     e.preventDefault();
     const res = await forSearchPage(title);

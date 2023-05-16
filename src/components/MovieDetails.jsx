@@ -1,7 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { fullInfo } from 'api';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 export const MovieDetails = () => {
+  console.log();
+  const { id } = useParams();
+  console.log(id);
+  const [film, setFilm] = useState();
+
+  useEffect(() => {
+    const film = fullInfo(id);
+    setFilm(film);
+  }, []);
+
   return (
     <div>
       <Link to="/movies" className="li-of-titles">
@@ -16,7 +27,7 @@ export const MovieDetails = () => {
             <li>
               <ul className="info-l">
                 <li>
-                  <h1>Title</h1>
+                  <h1>abboa</h1>
                 </li>
                 <li>
                   <p>Score</p>
