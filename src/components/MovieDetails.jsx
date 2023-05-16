@@ -7,6 +7,7 @@ export const MovieDetails = () => {
   const { id } = useParams();
   console.log(id);
   const [film, setFilm] = useState();
+
   useEffect(() => {
     const fetchFilm = async () => {
       const film = await fullInfo(id);
@@ -14,7 +15,8 @@ export const MovieDetails = () => {
     };
 
     fetchFilm();
-  });
+  }, [id]);
+
   console.log(film);
   if (film) {
     return (
