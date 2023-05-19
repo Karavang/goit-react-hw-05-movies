@@ -66,7 +66,13 @@ export const MovieDetails = () => {
         <div className="margin-top">
           <h3>Additional information</h3>
           <ul className="flexator">
-            <li>Cast</li>
+            <li>
+              {' '}
+              <Link to="cast" className="li-of-titles">
+                Cast
+              </Link>
+            </li>
+
             <li>Reviews</li>
           </ul>
         </div>

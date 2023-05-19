@@ -5,6 +5,7 @@ import { Movies } from './Movies';
 import { MovieDetails } from './MovieDetails';
 import { NotFound } from './NotFound';
 import { useState } from 'react';
+import { Cast } from './Cast';
 
 export const App = e => {
   const [title, setTitle] = useState();
@@ -18,7 +19,9 @@ export const App = e => {
             path="/movies"
             element={<Movies title={title} setTitle={setTitle} />}
           />
-          <Route path="/movies/:id" element={<MovieDetails e={title} />} />
+          <Route path="/movies/:id" element={<MovieDetails e={title} />}>
+            <Route path="cast" element={<Cast />} />
+          </Route>
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
