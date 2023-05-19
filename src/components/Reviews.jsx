@@ -12,17 +12,19 @@ export const Reviews = () => {
     }
     getCast();
   }, [id]);
-  if (review) {
-    console.log(review);
-    return (
-      <ul className="flexator" key={review.id}>
-        {review.results.map(e => (
+
+  return (
+    <ul className="flexator" key={review.id}>
+      {review ? (
+        review.results.map(e => (
           <li className="li-review">
             <h5>{e.author}</h5>
             <p>{e.content}</p>
           </li>
-        ))}
-      </ul>
-    );
-  }
+        ))
+      ) : (
+        <h3>no results</h3>
+      )}
+    </ul>
+  );
 };
