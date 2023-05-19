@@ -12,7 +12,7 @@ export const Cast = () => {
     }
     getCast();
   }, [id]);
-  console.log();
+
   if (cast) {
     return (
       <ul className="flexator">

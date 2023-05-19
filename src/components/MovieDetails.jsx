@@ -3,9 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
 
 export const MovieDetails = () => {
-  console.log();
   const { id } = useParams();
-  console.log(id);
+
   const [film, setFilm] = useState();
 
   useEffect(() => {
@@ -17,7 +16,6 @@ export const MovieDetails = () => {
     fetchFilm();
   }, [id]);
 
-  console.log(film);
   if (film) {
     return (
       <div className="container">
@@ -72,7 +70,11 @@ export const MovieDetails = () => {
               </Link>
             </li>
 
-            <li>Reviews</li>
+            <li>
+              <Link to="reviews" className="li-of-titles">
+                Reviews
+              </Link>
+            </li>
           </ul>
           <Outlet />
         </div>

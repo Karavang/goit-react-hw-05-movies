@@ -1,6 +1,5 @@
 import { forSearchPage } from 'api';
 import { Link } from 'react-router-dom';
-import { createContext } from 'react';
 
 export const Movies = ({ title, setTitle }) => {
   const handleSearch = async e => {

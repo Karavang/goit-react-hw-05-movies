@@ -23,3 +23,8 @@ export function castSet(id) {
     `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`
   ).then(res => res.json());
 }
+export function reviews(id) {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${API_KEY}`
+  ).then(res => res.json());
+}
