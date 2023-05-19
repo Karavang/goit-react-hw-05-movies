@@ -57,8 +57,8 @@ code {
 }
 .flexator {
   display: flex;
-
-  gap: 50px;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 .info-l {
   margin: 20px;
@@ -69,4 +69,11 @@ code {
 }
 .container {
   padding: 20px;
+}
+.image {
+  width: 200px;
+  height: 300px;
+}
+.li-cast {
+  width: 200px;
 }

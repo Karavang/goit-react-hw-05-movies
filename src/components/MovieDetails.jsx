@@ -1,6 +1,6 @@
 import { fullInfo } from 'api';
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 
 export const MovieDetails = () => {
   console.log();
@@ -67,7 +67,6 @@ export const MovieDetails = () => {
           <h3>Additional information</h3>
           <ul className="flexator">
             <li>
-              {' '}
               <Link to="cast" className="li-of-titles">
                 Cast
               </Link>
@@ -75,6 +74,7 @@ export const MovieDetails = () => {
 
             <li>Reviews</li>
           </ul>
+          <Outlet />
         </div>
       </div>
     );
