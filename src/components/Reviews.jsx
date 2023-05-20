@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 export const Reviews = () => {
   const { id } = useParams();
-  const [review, setReviews] = useState();
+  const [review, setReviews] = useState({});
   useEffect(() => {
     async function getCast() {
       const review = await reviews(id);
@@ -12,12 +12,12 @@ export const Reviews = () => {
     }
     getCast();
   }, [id]);
-
+  console.log(review);
   return (
-    <ul className="flexator" key={review.id}>
-      {review ? (
+    <ul className="flexator">
+      {review.results ? (
         review.results.map(e => (
-          <li className="li-review">
+          <li className="li-review" key={e.id}>
             <h5>{e.author}</h5>
             <p>{e.content}</p>
           </li>

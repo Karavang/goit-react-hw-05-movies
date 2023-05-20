@@ -17,7 +17,7 @@ export const Cast = () => {
     return (
       <ul className="flexator">
         {cast.cast.map(e => (
-          <li className="li-cast">
+          <li className="li-cast" key={e.id}>
             <img
               src={`https://image.tmdb.org/t/p/w500/${e.profile_path}`}
               alt=""

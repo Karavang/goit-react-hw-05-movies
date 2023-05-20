@@ -53,7 +53,7 @@ export const MovieDetails = () => {
                 <li>
                   <ul className="info-l flexator">
                     {film.genres.map(e => (
-                      <li>{e.name}</li>
+                      <li key={e.id}>{e.name}</li>
                     ))}
                   </ul>
                 </li>
